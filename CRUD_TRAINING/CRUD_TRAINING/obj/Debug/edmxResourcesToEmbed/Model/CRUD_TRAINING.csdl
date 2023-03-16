@@ -1,0 +1,716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRUD_TRAININGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bank_Casetype_Relation">
+    <Key>
+      <PropertyRef Name="BankID" />
+      <PropertyRef Name="Case_Type" />
+    </Key>
+    <Property Name="BankID" Type="Guid" Nullable="false" />
+    <Property Name="Case_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Represent_Num" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Bank" Relationship="CRUD_TRAININGModel.FK_dbo_Bank_Casetype_Relation_dbo_Bank_BankID" FromRole="Bank_Casetype_Relation" ToRole="Bank" />
+  </EntityType>
+  <EntityType Name="Bank_Report_Relation">
+    <Key>
+      <PropertyRef Name="BankID" />
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Name="BankID" Type="Guid" Nullable="false" />
+    <Property Name="ReportID" Type="Guid" Nullable="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Case_Basic">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+    </Key>
+    <Property Name="Estimate_Num" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Send_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Complete_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Urgent_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Case_Num" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Send_Unit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Send_Person" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Customer_Task" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Estimator" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Appraiser" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Other_Estimate_Cost" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Other_Cost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Other_Cost_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Other_Cost_Desc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Total_Estimate_Cost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Land_Products_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Builder_Products_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="Delete_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Delete_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Out_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="BankID" Type="Guid" Nullable="false" />
+    <Property Name="Case_Type" Type="Int32" Nullable="false" />
+    <Property Name="ProcessID" Type="Int32" Nullable="false" />
+    <Property Name="Send_Unit_Branch" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ReportID" Type="Guid" />
+    <Property Name="Borrower" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Report_Cost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Estimate_Cost_Percent" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Delete_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Is_Appeal" Type="Boolean" Nullable="false" />
+    <Property Name="Appeal_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Finally_Finish_Time" Type="DateTime" Precision="3" />
+    <Property Name="Delete_Time" Type="DateTime" Precision="3" />
+    <Property Name="Delete_User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Total_Reviewer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Builder_Cars">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="CarID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CarID" Type="Int32" Nullable="false" />
+    <Property Name="Position" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Parking_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Parking_Quantity" Type="Int32" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="Parking_Area" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Parking_Unit_Price_L" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Parking_Unit_Price_H" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Builder_Price">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+    </Key>
+    <Property Name="Estimate_Num" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Evaluate_Method" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Land_Unit_Price_L" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Land_Unit_Price_H" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Builder_Unit_Price_L" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Builder_Unit_Price_H" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Price_L" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Price_H" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Net_Value_L" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Net_Value_H" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Other_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="No_Car_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Appraiser_Find_Error" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+    <Property Name="Total_Reviewer_Find_Error" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Builder_Price_Detail">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="BuilderPriceID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BuilderPriceID" Type="Int32" Nullable="false" />
+    <Property Name="Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Hold_Area" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Unit_Price_L" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Unit_Price_H" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Builder_Products">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="BuilderID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BuilderID" Type="Int32" Nullable="false" />
+    <Property Name="Builder_Number" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Community_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Floor_Up" Type="Int32" />
+    <Property Name="Floor_Down" Type="Int32" />
+    <Property Name="House_Age" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Value_Add_Tax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Land_Hold_Area" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Builder_Hold_Area" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="Lot_Number" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="sFloor_Up" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sFloor_Down" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Land_House">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="Land_HouseID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Region" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Special_House_Status" Type="Boolean" />
+    <Property Name="Recent_Estimate_Review_Neighborhood" Type="Boolean" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="Land_HouseID" Type="Int32" Nullable="false" />
+    <Property Name="Land_Road_Sec" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Land_Road_Sub_Sec" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Land_Desc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Land_Data_Length" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Builder_Road" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Builder_Desc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Builder_Data_Length" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Old_Case" Type="Boolean" />
+    <Property Name="About_Sinyi_Flag" Type="Boolean" />
+    <Property Name="ZipCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Community_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Floor_Up" Type="Int32" />
+    <Property Name="Floor_Down" Type="Int32" />
+    <Property Name="House_Age" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="sFloor_Up" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="sFloor_Down" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Total_Price" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Land_Price">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+    </Key>
+    <Property Name="Estimate_Num" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Total_Price_L" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Price_H" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Net_Value_L" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Net_Value_H" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Other_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Land_Price_Detail">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="LandPriceID" />
+      <PropertyRef Name="LandID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LandPriceID" Type="Int32" Nullable="false" />
+    <Property Name="Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Hold_Area" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Unit_Price_L" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Unit_Price_H" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="LandID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Land_Products">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="LandID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LandID" Type="Int32" Nullable="false" />
+    <Property Name="Lot_Number" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Volume_Ratio" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Builder_Cover_Ratio" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Value_Add_Tax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Provide_Building_Use" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Case_Process">
+    <Key>
+      <PropertyRef Name="Case_Type" />
+      <PropertyRef Name="ProcessID" />
+    </Key>
+    <Property Name="Case_Type" Type="Int32" Nullable="false" />
+    <Property Name="ProcessID" Type="Int32" Nullable="false" />
+    <Property Name="Process_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="Class_Num" />
+      <PropertyRef Name="BankID" />
+      <PropertyRef Name="Case_Type" />
+    </Key>
+    <Property Name="Class_Num" Type="Int32" Nullable="false" />
+    <Property Name="Sendtime_S" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Sendtime_E" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Replytime" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="BankID" Type="Guid" Nullable="false" />
+    <Property Name="Case_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Today_Or_Nextday" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Code_Table">
+    <Key>
+      <PropertyRef Name="Class" />
+      <PropertyRef Name="Case_Type" />
+      <PropertyRef Name="Item_Type" />
+    </Key>
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="Class" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Case_Type" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Item_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Item_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Customer_Appraise_Price">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="Land_HouseID" />
+      <PropertyRef Name="Customer_Appraise_PriceID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Land_HouseID" Type="Int32" Nullable="false" />
+    <Property Name="Customer_Appraise_PriceID" Type="Int32" Nullable="false" />
+    <Property Name="Land_Unit_Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Builder_Unit_Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Car_Unit_Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Other_Unit_Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Dept">
+    <Key>
+      <PropertyRef Name="DeptID" />
+    </Key>
+    <Property Name="DeptID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Dept_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Leader_EmpoID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Parent_DeptID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Empo">
+    <Key>
+      <PropertyRef Name="EmpoID" />
+    </Key>
+    <Property Name="EmpoID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Empo_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="Estimate_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Review_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Appraiser_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Total_Review_Flag" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Holidays">
+    <Key>
+      <PropertyRef Name="Year" />
+      <PropertyRef Name="HolidayDate" />
+    </Key>
+    <Property Name="Year" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HolidayDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="Guid" Nullable="false" />
+    <Property Name="Menu_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Controller" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Action" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Menu_Url" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Menu_ParentID" Type="Guid" />
+    <Property Name="Icon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Type_Insert" Type="Boolean" />
+    <Property Name="Type_Update" Type="Boolean" />
+    <Property Name="Type_Delete" Type="Boolean" />
+    <Property Name="Type_Select" Type="Boolean" />
+    <Property Name="Type_Execue" Type="Boolean" />
+    <Property Name="Type_Report" Type="Boolean" />
+    <Property Name="Type_Spe1" Type="Boolean" />
+    <Property Name="Type_Spe2" Type="Boolean" />
+    <Property Name="Type_Spe3" Type="Boolean" />
+    <Property Name="Type_Spe4" Type="Boolean" />
+    <Property Name="Name_Spe1" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Name_Spe2" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Name_Spe3" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Name_Spe4" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Loading_Flag" Type="Boolean" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Roles_Menus" Relationship="Self.FK_dbo_Roles_Menus_dbo_Menus_MenuID" FromRole="Menus" ToRole="Roles_Menus" />
+  </EntityType>
+  <EntityType Name="Process_JumpReturn_History">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Estimate_Num" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ProcessID" Type="Int32" Nullable="false" />
+    <Property Name="Changed_ProcessID" Type="Int32" Nullable="false" />
+    <Property Name="Process_Return_Desc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="Case_Type" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="CityID" />
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="CityID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RegionID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Region_Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ZipCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Name="ReportID" Type="Guid" Nullable="false" />
+    <Property Name="Report_Paper_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+    <Property Name="Complex_Flag" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Road">
+    <Key>
+      <PropertyRef Name="CityID" />
+      <PropertyRef Name="RegionID" />
+      <PropertyRef Name="RoadID" />
+    </Key>
+    <Property Name="CityID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RegionID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoadID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Road_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Road_Sec">
+    <Key>
+      <PropertyRef Name="CityID" />
+      <PropertyRef Name="RegionID" />
+      <PropertyRef Name="SecID" />
+    </Key>
+    <Property Name="CityID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RegionID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SecID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sec_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Road_Sub_Sec">
+    <Key>
+      <PropertyRef Name="CityID" />
+      <PropertyRef Name="RegionID" />
+      <PropertyRef Name="SecID" />
+      <PropertyRef Name="SubSecID" />
+    </Key>
+    <Property Name="CityID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RegionID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SecID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SubSecID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SubSec_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Guid" Nullable="false" />
+    <Property Name="Role_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role_Desc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role_Status" Type="Boolean" Nullable="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Roles_Menus" Relationship="Self.FK_dbo_Roles_Menus_dbo_Roles_RoleID" FromRole="Roles" ToRole="Roles_Menus" />
+    <NavigationProperty Name="Users_Roles" Relationship="Self.FK_dbo_Users_Roles_dbo_Roles_RoleID" FromRole="Roles" ToRole="Users_Roles" />
+  </EntityType>
+  <EntityType Name="Roles_Menus">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="Guid" Nullable="false" />
+    <Property Name="RoleID" Type="Guid" Nullable="false" />
+    <Property Name="MenuID" Type="Guid" Nullable="false" />
+    <Property Name="Type_Insert" Type="Boolean" />
+    <Property Name="Type_Update" Type="Boolean" />
+    <Property Name="Type_Delete" Type="Boolean" />
+    <Property Name="Type_Select" Type="Boolean" />
+    <Property Name="Type_Execue" Type="Boolean" />
+    <Property Name="Type_Report" Type="Boolean" />
+    <Property Name="Type_Spe1" Type="Boolean" Nullable="false" />
+    <Property Name="Type_Spe2" Type="Boolean" Nullable="false" />
+    <Property Name="Type_Spe3" Type="Boolean" Nullable="false" />
+    <Property Name="Type_Spe4" Type="Boolean" Nullable="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Menus" Relationship="Self.FK_dbo_Roles_Menus_dbo_Menus_MenuID" FromRole="Roles_Menus" ToRole="Menus" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK_dbo_Roles_Menus_dbo_Roles_RoleID" FromRole="Roles_Menus" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Guid" Nullable="false" />
+    <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccountID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Salt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="EmpoID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Users_Roles" Relationship="Self.FK_dbo_Users_Roles_dbo_Users_UserID" FromRole="Users" ToRole="Users_Roles" />
+  </EntityType>
+  <EntityType Name="Users_Roles">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="Guid" Nullable="false" />
+    <Property Name="UserID" Type="Guid" Nullable="false" />
+    <Property Name="RoleID" Type="Guid" Nullable="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK_dbo_Users_Roles_dbo_Roles_RoleID" FromRole="Users_Roles" ToRole="Roles" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Users_Roles_dbo_Users_UserID" FromRole="Users_Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Road_TEST">
+    <Key>
+      <PropertyRef Name="CityID" />
+      <PropertyRef Name="RegionID" />
+      <PropertyRef Name="RoadID" />
+    </Key>
+    <Property Name="CityID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RegionID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoadID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Road_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_dbo_Roles_Menus_dbo_Menus_MenuID">
+    <End Role="Menus" Type="Self.Menus" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Roles_Menus" Type="Self.Roles_Menus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menus">
+        <PropertyRef Name="MenuID" />
+      </Principal>
+      <Dependent Role="Roles_Menus">
+        <PropertyRef Name="MenuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Roles_Menus_dbo_Roles_RoleID">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Roles_Menus" Type="Self.Roles_Menus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Roles_Menus">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Users_Roles_dbo_Roles_RoleID">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users_Roles" Type="Self.Users_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Users_Roles">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Users_Roles_dbo_Users_UserID">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users_Roles" Type="Self.Users_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Users_Roles">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CRUD_TRAININGEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bank_Casetype_Relation" EntityType="Self.Bank_Casetype_Relation" />
+    <EntitySet Name="Bank_Report_Relation" EntityType="Self.Bank_Report_Relation" />
+    <EntitySet Name="Case_Basic" EntityType="Self.Case_Basic" />
+    <EntitySet Name="Case_Basic_Builder_Cars" EntityType="Self.Case_Basic_Builder_Cars" />
+    <EntitySet Name="Case_Basic_Builder_Price" EntityType="Self.Case_Basic_Builder_Price" />
+    <EntitySet Name="Case_Basic_Builder_Price_Detail" EntityType="Self.Case_Basic_Builder_Price_Detail" />
+    <EntitySet Name="Case_Basic_Builder_Products" EntityType="Self.Case_Basic_Builder_Products" />
+    <EntitySet Name="Case_Basic_Land_House" EntityType="Self.Case_Basic_Land_House" />
+    <EntitySet Name="Case_Basic_Land_Price" EntityType="Self.Case_Basic_Land_Price" />
+    <EntitySet Name="Case_Basic_Land_Price_Detail" EntityType="Self.Case_Basic_Land_Price_Detail" />
+    <EntitySet Name="Case_Basic_Land_Products" EntityType="Self.Case_Basic_Land_Products" />
+    <EntitySet Name="Case_Process" EntityType="Self.Case_Process" />
+    <EntitySet Name="City" EntityType="Self.City" />
+    <EntitySet Name="Class" EntityType="Self.Class" />
+    <EntitySet Name="Code_Table" EntityType="Self.Code_Table" />
+    <EntitySet Name="Customer_Appraise_Price" EntityType="Self.Customer_Appraise_Price" />
+    <EntitySet Name="Dept" EntityType="Self.Dept" />
+    <EntitySet Name="Empo" EntityType="Self.Empo" />
+    <EntitySet Name="Holidays" EntityType="Self.Holidays" />
+    <EntitySet Name="Menus" EntityType="Self.Menus" />
+    <EntitySet Name="Process_JumpReturn_History" EntityType="Self.Process_JumpReturn_History" />
+    <EntitySet Name="Region" EntityType="Self.Region" />
+    <EntitySet Name="Report" EntityType="Self.Report" />
+    <EntitySet Name="Road" EntityType="Self.Road" />
+    <EntitySet Name="Road_Sec" EntityType="Self.Road_Sec" />
+    <EntitySet Name="Road_Sub_Sec" EntityType="Self.Road_Sub_Sec" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" />
+    <EntitySet Name="Roles_Menus" EntityType="Self.Roles_Menus" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="Users_Roles" EntityType="Self.Users_Roles" />
+    <EntitySet Name="Road_TEST" EntityType="Self.Road_TEST" />
+    <AssociationSet Name="FK_dbo_Roles_Menus_dbo_Menus_MenuID" Association="Self.FK_dbo_Roles_Menus_dbo_Menus_MenuID">
+      <End Role="Menus" EntitySet="Menus" />
+      <End Role="Roles_Menus" EntitySet="Roles_Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Roles_Menus_dbo_Roles_RoleID" Association="Self.FK_dbo_Roles_Menus_dbo_Roles_RoleID">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Roles_Menus" EntitySet="Roles_Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Users_Roles_dbo_Roles_RoleID" Association="Self.FK_dbo_Users_Roles_dbo_Roles_RoleID">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users_Roles" EntitySet="Users_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Users_Roles_dbo_Users_UserID" Association="Self.FK_dbo_Users_Roles_dbo_Users_UserID">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Users_Roles" EntitySet="Users_Roles" />
+    </AssociationSet>
+    <EntitySet Name="Bank" EntityType="CRUD_TRAININGModel.Bank" />
+    <AssociationSet Name="FK_dbo_Bank_Casetype_Relation_dbo_Bank_BankID" Association="CRUD_TRAININGModel.FK_dbo_Bank_Casetype_Relation_dbo_Bank_BankID">
+      <End Role="Bank" EntitySet="Bank" />
+      <End Role="Bank_Casetype_Relation" EntitySet="Bank_Casetype_Relation" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bank">
+    <Key>
+      <PropertyRef Name="BankID" />
+    </Key>
+    <Property Name="BankID" Type="Guid" Nullable="false" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+    <Property Name="InputUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InputDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="Bank_Name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Manual_Out_Flag" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Bank_Casetype_Relation" Relationship="CRUD_TRAININGModel.FK_dbo_Bank_Casetype_Relation_dbo_Bank_BankID" FromRole="Bank" ToRole="Bank_Casetype_Relation" />
+  </EntityType>
+  <Association Name="FK_dbo_Bank_Casetype_Relation_dbo_Bank_BankID">
+    <End Type="CRUD_TRAININGModel.Bank" Role="Bank" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="CRUD_TRAININGModel.Bank_Casetype_Relation" Role="Bank_Casetype_Relation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="BankID" />
+      </Principal>
+      <Dependent Role="Bank_Casetype_Relation">
+        <PropertyRef Name="BankID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CRUD_TRAININGModelStoreContainer" CdmEntityContainer="CRUD_TRAININGEntities">
+    <EntitySetMapping Name="Bank_Casetype_Relation">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Bank_Casetype_Relation">
+        <MappingFragment StoreEntitySet="Bank_Casetype_Relation">
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="Case_Type" ColumnName="Case_Type" />
+          <ScalarProperty Name="Represent_Num" ColumnName="Represent_Num" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bank_Report_Relation">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Bank_Report_Relation">
+        <MappingFragment StoreEntitySet="Bank_Report_Relation">
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case_Basic">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Case_Basic">
+        <MappingFragment StoreEntitySet="Case_Basic">
+          <ScalarProperty Name="Estimate_Num" ColumnName="Estimate_Num" />
+          <ScalarProperty Name="Send_Time" ColumnName="Send_Time" />
+          <ScalarProperty Name="Complete_Time" ColumnName="Complete_Time" />
+          <ScalarProperty Name="Urgent_Flag" ColumnName="Urgent_Flag" />
+          <ScalarProperty Name="Case_Num" ColumnName="Case_Num" />
+          <ScalarProperty Name="Send_Unit" ColumnName="Send_Unit" />
+          <ScalarProperty Name="Send_Person" ColumnName="Send_Person" />
+          <ScalarProperty Name="Customer_Task" ColumnName="Customer_Task" />
+          <ScalarProperty Name="Estimator" ColumnName="Estimator" />
+          <ScalarProperty Name="Appraiser" ColumnName="Appraiser" />
+          <ScalarProperty Name="Other_Estimate_Cost" ColumnName="Other_Estimate_Cost" />
+          <ScalarProperty Name="Other_Cost" ColumnName="Other_Cost" />
+          <ScalarProperty Name="Other_Cost_Type" ColumnName="Other_Cost_Type" />
+          <ScalarProperty Name="Other_Cost_Desc" ColumnName="Other_Cost_Desc" />
+          <ScalarProperty Name="Total_Estimate_Cost" ColumnName="Total_Estimate_Cost" />
+          <ScalarProperty Name="Land_Products_Flag" ColumnName="Land_Products_Flag" />
+          <ScalarProperty Name="Builder_Products_Flag" ColumnName="Builder_Products_Flag" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="Delete_Flag" ColumnName="Delete_Flag" />
+          <ScalarProperty Name="Delete_Desc" ColumnName="Delete_Desc" />
+          <ScalarProperty Name="Out_Flag" ColumnName="Out_Flag" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="Case_Type" ColumnName="Case_Type" />
+          <ScalarProperty Name="ProcessID" ColumnName="ProcessID" />
+          <ScalarProperty Name="Send_Unit_Branch" ColumnName="Send_Unit_Branch" />
+          <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+          <ScalarProperty Name="Borrower" ColumnName="Borrower" />
+          <ScalarProperty Name="Report_Cost" ColumnName="Report_Cost" />
+          <ScalarProperty Name="Estimate_Cost_Percent" ColumnName="Estimate_Cost_Percent" />
+          <ScalarProperty Name="Delete_Type" ColumnName="Delete_Type" />
+          <ScalarProperty Name="Is_Appeal" ColumnName="Is_Appeal" />
+          <ScalarProperty Name="Appeal_Type" ColumnName="Appeal_Type" />
+          <ScalarProperty Name="Finally_Finish_Time" ColumnName="Finally_Finish_Time" />
+          <ScalarProperty Name="Delete_Time" ColumnName="Delete_Time" />
+          <ScalarProperty Name="Delete_User" ColumnName="Delete_User" />
+          <ScalarProperty Name="Total_Reviewer" ColumnName="Total_Reviewer" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case_Basic_Builder_Cars">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Case_Basic_Builder_Cars">
+        <MappingFragment StoreEntitySet="Case_Basic_Builder_Cars">
+          <ScalarProperty Name="Estimate_Num" ColumnName="Estimate_Num" />
+          <ScalarProperty Name="CarID" ColumnName="CarID" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Parking_Type" ColumnName="Parking_Type" />
+          <ScalarProperty Name="Parking_Quantity" ColumnName="Parking_Quantity" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="Parking_Area" ColumnName="Parking_Area" />
+          <ScalarProperty Name="Parking_Unit_Price_L" ColumnName="Parking_Unit_Price_L" />
+          <ScalarProperty Name="Parking_Unit_Price_H" ColumnName="Parking_Unit_Price_H" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case_Basic_Builder_Price">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Case_Basic_Builder_Price">
+        <MappingFragment StoreEntitySet="Case_Basic_Builder_Price">
+          <ScalarProperty Name="Estimate_Num" ColumnName="Estimate_Num" />
+          <ScalarProperty Name="Evaluate_Method" ColumnName="Evaluate_Method" />
+          <ScalarProperty Name="Land_Unit_Price_L" ColumnName="Land_Unit_Price_L" />
+          <ScalarProperty Name="Land_Unit_Price_H" ColumnName="Land_Unit_Price_H" />
+          <ScalarProperty Name="Builder_Unit_Price_L" ColumnName="Builder_Unit_Price_L" />
+          <ScalarProperty Name="Builder_Unit_Price_H" ColumnName="Builder_Unit_Price_H" />
+          <ScalarProperty Name="Total_Price_L" ColumnName="Total_Price_L" />
+          <ScalarProperty Name="Total_Price_H" ColumnName="Total_Price_H" />
+          <ScalarProperty Name="Net_Value_L" ColumnName="Net_Value_L" />
+          <ScalarProperty Name="Net_Value_H" ColumnName="Net_Value_H" />
+          <ScalarProperty Name="Other_Desc" ColumnName="Other_Desc" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="No_Car_Flag" ColumnName="No_Car_Flag" />
+          <ScalarProperty Name="Appraiser_Find_Error" ColumnName="Appraiser_Find_Error" />
+          <ScalarProperty Name="Total_Reviewer_Find_Error" ColumnName="Total_Reviewer_Find_Error" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case_Basic_Builder_Price_Detail">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Case_Basic_Builder_Price_Detail">
+        <MappingFragment StoreEntitySet="Case_Basic_Builder_Price_Detail">
+          <ScalarProperty Name="Estimate_Num" ColumnName="Estimate_Num" />
+          <ScalarProperty Name="BuilderPriceID" ColumnName="BuilderPriceID" />
+          <ScalarProperty Name="Desc" ColumnName="Desc" />
+          <ScalarProperty Name="Hold_Area" ColumnName="Hold_Area" />
+          <ScalarProperty Name="Unit_Price_L" ColumnName="Unit_Price_L" />
+          <ScalarProperty Name="Unit_Price_H" ColumnName="Unit_Price_H" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case_Basic_Builder_Products">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Case_Basic_Builder_Products">
+        <MappingFragment StoreEntitySet="Case_Basic_Builder_Products">
+          <ScalarProperty Name="Estimate_Num" ColumnName="Estimate_Num" />
+          <ScalarProperty Name="BuilderID" ColumnName="BuilderID" />
+          <ScalarProperty Name="Builder_Number" ColumnName="Builder_Number" />
+          <ScalarProperty Name="Community_Name" ColumnName="Community_Name" />
+          <ScalarProperty Name="Floor_Up" ColumnName="Floor_Up" />
+          <ScalarProperty Name="Floor_Down" ColumnName="Floor_Down" />
+          <ScalarProperty Name="House_Age" ColumnName="House_Age" />
+          <ScalarProperty Name="Value_Add_Tax" ColumnName="Value_Add_Tax" />
+          <ScalarProperty Name="Land_Hold_Area" ColumnName="Land_Hold_Area" />
+          <ScalarProperty Name="Builder_Hold_Area" ColumnName="Builder_Hold_Area" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="Lot_Number" ColumnName="Lot_Number" />
+          <ScalarProperty Name="sFloor_Up" ColumnName="sFloor_Up" />
+          <ScalarProperty Name="sFloor_Down" ColumnName="sFloor_Down" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case_Basic_Land_House">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Case_Basic_Land_House">
+        <MappingFragment StoreEntitySet="Case_Basic_Land_House">
+          <ScalarProperty Name="Estimate_Num" ColumnName="Estimate_Num" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Region" ColumnName="Region" />
+          <ScalarProperty Name="Special_House_Status" ColumnName="Special_House_Status" />
+          <ScalarProperty Name="Recent_Estimate_Review_Neighborhood" ColumnName="Recent_Estimate_Review_Neighborhood" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="Land_HouseID" ColumnName="Land_HouseID" />
+          <ScalarProperty Name="Land_Road_Sec" ColumnName="Land_Road_Sec" />
+          <ScalarProperty Name="Land_Road_Sub_Sec" ColumnName="Land_Road_Sub_Sec" />
+          <ScalarProperty Name="Land_Desc" ColumnName="Land_Desc" />
+          <ScalarProperty Name="Land_Data_Length" ColumnName="Land_Data_Length" />
+          <ScalarProperty Name="Builder_Road" ColumnName="Builder_Road" />
+          <ScalarProperty Name="Builder_Desc" ColumnName="Builder_Desc" />
+          <ScalarProperty Name="Builder_Data_Length" ColumnName="Builder_Data_Length" />
+          <ScalarProperty Name="Old_Case" ColumnName="Old_Case" />
+          <ScalarProperty Name="About_Sinyi_Flag" ColumnName="About_Sinyi_Flag" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Community_Name" ColumnName="Community_Name" />
+          <ScalarProperty Name="Floor_Up" ColumnName="Floor_Up" />
+          <ScalarProperty Name="Floor_Down" ColumnName="Floor_Down" />
+          <ScalarProperty Name="House_Age" ColumnName="House_Age" />
+          <ScalarProperty Name="sFloor_Up" ColumnName="sFloor_Up" />
+          <ScalarProperty Name="sFloor_Down" ColumnName="sFloor_Down" />
+          <ScalarProperty Name="Total_Price" ColumnName="Total_Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case_Basic_Land_Price">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Case_Basic_Land_Price">
+        <MappingFragment StoreEntitySet="Case_Basic_Land_Price">
+          <ScalarProperty Name="Estimate_Num" ColumnName="Estimate_Num" />
+          <ScalarProperty Name="Total_Price_L" ColumnName="Total_Price_L" />
+          <ScalarProperty Name="Total_Price_H" ColumnName="Total_Price_H" />
+          <ScalarProperty Name="Net_Value_L" ColumnName="Net_Value_L" />
+          <ScalarProperty Name="Net_Value_H" ColumnName="Net_Value_H" />
+          <ScalarProperty Name="Other_Desc" ColumnName="Other_Desc" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case_Basic_Land_Price_Detail">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Case_Basic_Land_Price_Detail">
+        <MappingFragment StoreEntitySet="Case_Basic_Land_Price_Detail">
+          <ScalarProperty Name="Estimate_Num" ColumnName="Estimate_Num" />
+          <ScalarProperty Name="LandPriceID" ColumnName="LandPriceID" />
+          <ScalarProperty Name="Desc" ColumnName="Desc" />
+          <ScalarProperty Name="Hold_Area" ColumnName="Hold_Area" />
+          <ScalarProperty Name="Unit_Price_L" ColumnName="Unit_Price_L" />
+          <ScalarProperty Name="Unit_Price_H" ColumnName="Unit_Price_H" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="LandID" ColumnName="LandID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case_Basic_Land_Products">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Case_Basic_Land_Products">
+        <MappingFragment StoreEntitySet="Case_Basic_Land_Products">
+          <ScalarProperty Name="Estimate_Num" ColumnName="Estimate_Num" />
+          <ScalarProperty Name="LandID" ColumnName="LandID" />
+          <ScalarProperty Name="Lot_Number" ColumnName="Lot_Number" />
+          <ScalarProperty Name="Volume_Ratio" ColumnName="Volume_Ratio" />
+          <ScalarProperty Name="Builder_Cover_Ratio" ColumnName="Builder_Cover_Ratio" />
+          <ScalarProperty Name="Value_Add_Tax" ColumnName="Value_Add_Tax" />
+          <ScalarProperty Name="Provide_Building_Use" ColumnName="Provide_Building_Use" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case_Process">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Case_Process">
+        <MappingFragment StoreEntitySet="Case_Process">
+          <ScalarProperty Name="Case_Type" ColumnName="Case_Type" />
+          <ScalarProperty Name="ProcessID" ColumnName="ProcessID" />
+          <ScalarProperty Name="Process_Name" ColumnName="Process_Name" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Class">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Class">
+        <MappingFragment StoreEntitySet="Class">
+          <ScalarProperty Name="Class_Num" ColumnName="Class_Num" />
+          <ScalarProperty Name="Sendtime_S" ColumnName="Sendtime_S" />
+          <ScalarProperty Name="Sendtime_E" ColumnName="Sendtime_E" />
+          <ScalarProperty Name="Replytime" ColumnName="Replytime" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="Case_Type" ColumnName="Case_Type" />
+          <ScalarProperty Name="Today_Or_Nextday" ColumnName="Today_Or_Nextday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Code_Table">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Code_Table">
+        <MappingFragment StoreEntitySet="Code_Table">
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Case_Type" ColumnName="Case_Type" />
+          <ScalarProperty Name="Item_Type" ColumnName="Item_Type" />
+          <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_Appraise_Price">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Customer_Appraise_Price">
+        <MappingFragment StoreEntitySet="Customer_Appraise_Price">
+          <ScalarProperty Name="Estimate_Num" ColumnName="Estimate_Num" />
+          <ScalarProperty Name="Land_HouseID" ColumnName="Land_HouseID" />
+          <ScalarProperty Name="Customer_Appraise_PriceID" ColumnName="Customer_Appraise_PriceID" />
+          <ScalarProperty Name="Land_Unit_Price" ColumnName="Land_Unit_Price" />
+          <ScalarProperty Name="Builder_Unit_Price" ColumnName="Builder_Unit_Price" />
+          <ScalarProperty Name="Car_Unit_Price" ColumnName="Car_Unit_Price" />
+          <ScalarProperty Name="Desc" ColumnName="Desc" />
+          <ScalarProperty Name="Other_Unit_Price" ColumnName="Other_Unit_Price" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dept">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Dept">
+        <MappingFragment StoreEntitySet="Dept">
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="Dept_Name" ColumnName="Dept_Name" />
+          <ScalarProperty Name="Leader_EmpoID" ColumnName="Leader_EmpoID" />
+          <ScalarProperty Name="Parent_DeptID" ColumnName="Parent_DeptID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empo">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Empo">
+        <MappingFragment StoreEntitySet="Empo">
+          <ScalarProperty Name="EmpoID" ColumnName="EmpoID" />
+          <ScalarProperty Name="Empo_Name" ColumnName="Empo_Name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="Estimate_Flag" ColumnName="Estimate_Flag" />
+          <ScalarProperty Name="Review_Flag" ColumnName="Review_Flag" />
+          <ScalarProperty Name="Appraiser_Flag" ColumnName="Appraiser_Flag" />
+          <ScalarProperty Name="Total_Review_Flag" ColumnName="Total_Review_Flag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Holidays">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Holidays">
+        <MappingFragment StoreEntitySet="Holidays">
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="HolidayDate" ColumnName="HolidayDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Menus">
+        <MappingFragment StoreEntitySet="Menus">
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="Menu_Name" ColumnName="Menu_Name" />
+          <ScalarProperty Name="Controller" ColumnName="Controller" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Menu_Url" ColumnName="Menu_Url" />
+          <ScalarProperty Name="Menu_ParentID" ColumnName="Menu_ParentID" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Type_Insert" ColumnName="Type_Insert" />
+          <ScalarProperty Name="Type_Update" ColumnName="Type_Update" />
+          <ScalarProperty Name="Type_Delete" ColumnName="Type_Delete" />
+          <ScalarProperty Name="Type_Select" ColumnName="Type_Select" />
+          <ScalarProperty Name="Type_Execue" ColumnName="Type_Execue" />
+          <ScalarProperty Name="Type_Report" ColumnName="Type_Report" />
+          <ScalarProperty Name="Type_Spe1" ColumnName="Type_Spe1" />
+          <ScalarProperty Name="Type_Spe2" ColumnName="Type_Spe2" />
+          <ScalarProperty Name="Type_Spe3" ColumnName="Type_Spe3" />
+          <ScalarProperty Name="Type_Spe4" ColumnName="Type_Spe4" />
+          <ScalarProperty Name="Name_Spe1" ColumnName="Name_Spe1" />
+          <ScalarProperty Name="Name_Spe2" ColumnName="Name_Spe2" />
+          <ScalarProperty Name="Name_Spe3" ColumnName="Name_Spe3" />
+          <ScalarProperty Name="Name_Spe4" ColumnName="Name_Spe4" />
+          <ScalarProperty Name="Loading_Flag" ColumnName="Loading_Flag" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Process_JumpReturn_History">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Process_JumpReturn_History">
+        <MappingFragment StoreEntitySet="Process_JumpReturn_History">
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
+          <ScalarProperty Name="Estimate_Num" ColumnName="Estimate_Num" />
+          <ScalarProperty Name="ProcessID" ColumnName="ProcessID" />
+          <ScalarProperty Name="Changed_ProcessID" ColumnName="Changed_ProcessID" />
+          <ScalarProperty Name="Process_Return_Desc" ColumnName="Process_Return_Desc" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="Case_Type" ColumnName="Case_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Region">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="Region_Name" ColumnName="Region_Name" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Report">
+        <MappingFragment StoreEntitySet="Report">
+          <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+          <ScalarProperty Name="Report_Paper_Name" ColumnName="Report_Paper_Name" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Complex_Flag" ColumnName="Complex_Flag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Road">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Road">
+        <MappingFragment StoreEntitySet="Road">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="RoadID" ColumnName="RoadID" />
+          <ScalarProperty Name="Road_Name" ColumnName="Road_Name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Road_Sec">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Road_Sec">
+        <MappingFragment StoreEntitySet="Road_Sec">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="SecID" ColumnName="SecID" />
+          <ScalarProperty Name="Sec_Name" ColumnName="Sec_Name" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Road_Sub_Sec">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Road_Sub_Sec">
+        <MappingFragment StoreEntitySet="Road_Sub_Sec">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="SecID" ColumnName="SecID" />
+          <ScalarProperty Name="SubSecID" ColumnName="SubSecID" />
+          <ScalarProperty Name="SubSec_Name" ColumnName="SubSec_Name" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+          <ScalarProperty Name="Role_Desc" ColumnName="Role_Desc" />
+          <ScalarProperty Name="Role_Status" ColumnName="Role_Status" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles_Menus">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Roles_Menus">
+        <MappingFragment StoreEntitySet="Roles_Menus">
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="Type_Insert" ColumnName="Type_Insert" />
+          <ScalarProperty Name="Type_Update" ColumnName="Type_Update" />
+          <ScalarProperty Name="Type_Delete" ColumnName="Type_Delete" />
+          <ScalarProperty Name="Type_Select" ColumnName="Type_Select" />
+          <ScalarProperty Name="Type_Execue" ColumnName="Type_Execue" />
+          <ScalarProperty Name="Type_Report" ColumnName="Type_Report" />
+          <ScalarProperty Name="Type_Spe1" ColumnName="Type_Spe1" />
+          <ScalarProperty Name="Type_Spe2" ColumnName="Type_Spe2" />
+          <ScalarProperty Name="Type_Spe3" ColumnName="Type_Spe3" />
+          <ScalarProperty Name="Type_Spe4" ColumnName="Type_Spe4" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+          <ScalarProperty Name="EmpoID" ColumnName="EmpoID" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users_Roles">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Users_Roles">
+        <MappingFragment StoreEntitySet="Users_Roles">
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Road_TEST">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Road_TEST">
+        <MappingFragment StoreEntitySet="Road_TEST">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="RoadID" ColumnName="RoadID" />
+          <ScalarProperty Name="Road_Name" ColumnName="Road_Name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bank">
+      <EntityTypeMapping TypeName="CRUD_TRAININGModel.Bank">
+        <MappingFragment StoreEntitySet="Bank">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Manual_Out_Flag" ColumnName="Manual_Out_Flag" />
+          <ScalarProperty Name="Bank_Name" ColumnName="Bank_Name" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="InputDate" ColumnName="InputDate" />
+          <ScalarProperty Name="InputUser" ColumnName="InputUser" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

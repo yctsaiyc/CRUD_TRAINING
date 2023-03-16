@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRUD_TRAININGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bank">
+    <Key>
+      <PropertyRef Name="BankID" />
+    </Key>
+    <Property Name="BankID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Bank_Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Manual_Out_Flag" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Bank_Casetype_Relation">
+    <Key>
+      <PropertyRef Name="BankID" />
+      <PropertyRef Name="Case_Type" />
+    </Key>
+    <Property Name="BankID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Case_Type" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Represent_Num" Type="varchar" MaxLength="5" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Bank_Report_Relation">
+    <Key>
+      <PropertyRef Name="BankID" />
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Name="BankID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ReportID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Case_Basic">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+    </Key>
+    <Property Name="Estimate_Num" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Send_Time" Type="datetime" Nullable="false" />
+    <Property Name="Complete_Time" Type="datetime" Nullable="false" />
+    <Property Name="Urgent_Flag" Type="bit" Nullable="false" />
+    <Property Name="Case_Num" Type="nvarchar" MaxLength="30" />
+    <Property Name="Send_Unit" Type="nvarchar" MaxLength="20" />
+    <Property Name="Send_Person" Type="nvarchar" MaxLength="20" />
+    <Property Name="Customer_Task" Type="nvarchar(max)" />
+    <Property Name="Estimator" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Appraiser" Type="varchar" MaxLength="10" />
+    <Property Name="Other_Estimate_Cost" Type="nvarchar" MaxLength="10" />
+    <Property Name="Other_Cost" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Other_Cost_Type" Type="varchar" MaxLength="5" />
+    <Property Name="Other_Cost_Desc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Total_Estimate_Cost" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Land_Products_Flag" Type="bit" Nullable="false" />
+    <Property Name="Builder_Products_Flag" Type="bit" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Delete_Flag" Type="bit" Nullable="false" />
+    <Property Name="Delete_Desc" Type="nvarchar" MaxLength="500" />
+    <Property Name="Out_Flag" Type="bit" Nullable="false" />
+    <Property Name="BankID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Case_Type" Type="int" Nullable="false" />
+    <Property Name="ProcessID" Type="int" Nullable="false" />
+    <Property Name="Send_Unit_Branch" Type="nvarchar" MaxLength="20" />
+    <Property Name="ReportID" Type="uniqueidentifier" />
+    <Property Name="Borrower" Type="nvarchar" MaxLength="10" />
+    <Property Name="Report_Cost" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Estimate_Cost_Percent" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Delete_Type" Type="varchar" MaxLength="5" />
+    <Property Name="Is_Appeal" Type="bit" Nullable="false" />
+    <Property Name="Appeal_Type" Type="varchar" MaxLength="5" />
+    <Property Name="Finally_Finish_Time" Type="datetime" />
+    <Property Name="Delete_Time" Type="datetime" />
+    <Property Name="Delete_User" Type="nvarchar" MaxLength="50" />
+    <Property Name="Total_Reviewer" Type="varchar" MaxLength="10" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Builder_Cars">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="CarID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CarID" Type="int" Nullable="false" />
+    <Property Name="Position" Type="nvarchar" MaxLength="30" />
+    <Property Name="Parking_Type" Type="varchar" MaxLength="5" />
+    <Property Name="Parking_Quantity" Type="int" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Parking_Area" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Parking_Unit_Price_L" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Parking_Unit_Price_H" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Builder_Price">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+    </Key>
+    <Property Name="Estimate_Num" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Evaluate_Method" Type="varchar" MaxLength="5" />
+    <Property Name="Land_Unit_Price_L" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Land_Unit_Price_H" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Builder_Unit_Price_L" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Builder_Unit_Price_H" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Price_L" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Price_H" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Net_Value_L" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Net_Value_H" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Other_Desc" Type="nvarchar(max)" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="No_Car_Flag" Type="bit" Nullable="false" />
+    <Property Name="Appraiser_Find_Error" Type="nvarchar" MaxLength="800" />
+    <Property Name="Total_Reviewer_Find_Error" Type="nvarchar" MaxLength="800" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Builder_Price_Detail">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="BuilderPriceID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="BuilderPriceID" Type="int" Nullable="false" />
+    <Property Name="Desc" Type="nvarchar" MaxLength="500" />
+    <Property Name="Hold_Area" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Unit_Price_L" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Unit_Price_H" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Builder_Products">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="BuilderID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BuilderID" Type="int" Nullable="false" />
+    <Property Name="Builder_Number" Type="nvarchar" MaxLength="500" />
+    <Property Name="Community_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Floor_Up" Type="int" />
+    <Property Name="Floor_Down" Type="int" />
+    <Property Name="House_Age" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Value_Add_Tax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Land_Hold_Area" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Builder_Hold_Area" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Lot_Number" Type="nvarchar" MaxLength="500" />
+    <Property Name="sFloor_Up" Type="nvarchar" MaxLength="10" />
+    <Property Name="sFloor_Down" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Land_House">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="Land_HouseID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="20" />
+    <Property Name="Region" Type="nvarchar" MaxLength="20" />
+    <Property Name="Special_House_Status" Type="bit" />
+    <Property Name="Recent_Estimate_Review_Neighborhood" Type="bit" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Land_HouseID" Type="int" Nullable="false" />
+    <Property Name="Land_Road_Sec" Type="nvarchar" MaxLength="20" />
+    <Property Name="Land_Road_Sub_Sec" Type="nvarchar" MaxLength="20" />
+    <Property Name="Land_Desc" Type="nvarchar" MaxLength="150" />
+    <Property Name="Land_Data_Length" Type="nvarchar" MaxLength="20" />
+    <Property Name="Builder_Road" Type="nvarchar" MaxLength="20" />
+    <Property Name="Builder_Desc" Type="nvarchar" MaxLength="150" />
+    <Property Name="Builder_Data_Length" Type="nvarchar" MaxLength="20" />
+    <Property Name="Old_Case" Type="bit" />
+    <Property Name="About_Sinyi_Flag" Type="bit" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="5" />
+    <Property Name="Community_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Floor_Up" Type="int" />
+    <Property Name="Floor_Down" Type="int" />
+    <Property Name="House_Age" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="sFloor_Up" Type="nvarchar" MaxLength="10" />
+    <Property Name="sFloor_Down" Type="nvarchar" MaxLength="10" />
+    <Property Name="Total_Price" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Land_Price">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+    </Key>
+    <Property Name="Estimate_Num" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Total_Price_L" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Total_Price_H" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Net_Value_L" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Net_Value_H" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Other_Desc" Type="nvarchar(max)" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Land_Price_Detail">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="LandPriceID" />
+      <PropertyRef Name="LandID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LandPriceID" Type="int" Nullable="false" />
+    <Property Name="Desc" Type="nvarchar" MaxLength="500" />
+    <Property Name="Hold_Area" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Unit_Price_L" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Unit_Price_H" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="LandID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Case_Basic_Land_Products">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="LandID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LandID" Type="int" Nullable="false" />
+    <Property Name="Lot_Number" Type="nvarchar" MaxLength="500" />
+    <Property Name="Volume_Ratio" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Builder_Cover_Ratio" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Value_Add_Tax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Provide_Building_Use" Type="varchar" MaxLength="5" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Case_Process">
+    <Key>
+      <PropertyRef Name="Case_Type" />
+      <PropertyRef Name="ProcessID" />
+    </Key>
+    <Property Name="Case_Type" Type="int" Nullable="false" />
+    <Property Name="ProcessID" Type="int" Nullable="false" />
+    <Property Name="Process_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="City_Name" Type="nvarchar" MaxLength="10" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="Class_Num" />
+      <PropertyRef Name="BankID" />
+      <PropertyRef Name="Case_Type" />
+    </Key>
+    <Property Name="Class_Num" Type="int" Nullable="false" />
+    <Property Name="Sendtime_S" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Sendtime_E" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Replytime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="BankID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Case_Type" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Today_Or_Nextday" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Code_Table">
+    <Key>
+      <PropertyRef Name="Class" />
+      <PropertyRef Name="Case_Type" />
+      <PropertyRef Name="Item_Type" />
+    </Key>
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Class" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Case_Type" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Item_Type" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Item_Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Customer_Appraise_Price">
+    <Key>
+      <PropertyRef Name="Estimate_Num" />
+      <PropertyRef Name="Land_HouseID" />
+      <PropertyRef Name="Customer_Appraise_PriceID" />
+    </Key>
+    <Property Name="Estimate_Num" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Land_HouseID" Type="int" Nullable="false" />
+    <Property Name="Customer_Appraise_PriceID" Type="int" Nullable="false" />
+    <Property Name="Land_Unit_Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Builder_Unit_Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Car_Unit_Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Desc" Type="nvarchar" MaxLength="100" />
+    <Property Name="Other_Unit_Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Dept">
+    <Key>
+      <PropertyRef Name="DeptID" />
+    </Key>
+    <Property Name="DeptID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Dept_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Leader_EmpoID" Type="varchar" MaxLength="20" />
+    <Property Name="Parent_DeptID" Type="varchar" MaxLength="20" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Empo">
+    <Key>
+      <PropertyRef Name="EmpoID" />
+    </Key>
+    <Property Name="EmpoID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Empo_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Estimate_Flag" Type="bit" Nullable="false" />
+    <Property Name="Review_Flag" Type="bit" Nullable="false" />
+    <Property Name="Appraiser_Flag" Type="bit" Nullable="false" />
+    <Property Name="Total_Review_Flag" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Holidays">
+    <Key>
+      <PropertyRef Name="Year" />
+      <PropertyRef Name="HolidayDate" />
+    </Key>
+    <Property Name="Year" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="HolidayDate" Type="datetime" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="MenuID" />
+    </Key>
+    <Property Name="MenuID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Menu_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Controller" Type="nvarchar(max)" />
+    <Property Name="Action" Type="nvarchar(max)" />
+    <Property Name="Menu_Url" Type="nvarchar" MaxLength="250" />
+    <Property Name="Menu_ParentID" Type="uniqueidentifier" />
+    <Property Name="Icon" Type="nvarchar" MaxLength="30" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Type_Insert" Type="bit" />
+    <Property Name="Type_Update" Type="bit" />
+    <Property Name="Type_Delete" Type="bit" />
+    <Property Name="Type_Select" Type="bit" />
+    <Property Name="Type_Execue" Type="bit" />
+    <Property Name="Type_Report" Type="bit" />
+    <Property Name="Type_Spe1" Type="bit" />
+    <Property Name="Type_Spe2" Type="bit" />
+    <Property Name="Type_Spe3" Type="bit" />
+    <Property Name="Type_Spe4" Type="bit" />
+    <Property Name="Name_Spe1" Type="nvarchar" MaxLength="5" />
+    <Property Name="Name_Spe2" Type="nvarchar" MaxLength="5" />
+    <Property Name="Name_Spe3" Type="nvarchar" MaxLength="5" />
+    <Property Name="Name_Spe4" Type="nvarchar" MaxLength="5" />
+    <Property Name="Loading_Flag" Type="bit" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Process_JumpReturn_History">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Estimate_Num" Type="varchar" MaxLength="20" />
+    <Property Name="ProcessID" Type="int" Nullable="false" />
+    <Property Name="Changed_ProcessID" Type="int" Nullable="false" />
+    <Property Name="Process_Return_Desc" Type="nvarchar" MaxLength="500" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="Case_Type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="CityID" />
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="CityID" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="RegionID" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Region_Name" Type="nvarchar" MaxLength="10" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="5" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Name="ReportID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Report_Paper_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="Complex_Flag" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Road">
+    <Key>
+      <PropertyRef Name="CityID" />
+      <PropertyRef Name="RegionID" />
+      <PropertyRef Name="RoadID" />
+    </Key>
+    <Property Name="CityID" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="RegionID" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="RoadID" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Road_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Road_Sec">
+    <Key>
+      <PropertyRef Name="CityID" />
+      <PropertyRef Name="RegionID" />
+      <PropertyRef Name="SecID" />
+    </Key>
+    <Property Name="CityID" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="RegionID" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="SecID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Sec_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Road_Sub_Sec">
+    <Key>
+      <PropertyRef Name="CityID" />
+      <PropertyRef Name="RegionID" />
+      <PropertyRef Name="SecID" />
+      <PropertyRef Name="SubSecID" />
+    </Key>
+    <Property Name="CityID" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="RegionID" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="SecID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="SubSecID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="SubSec_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'CRUD_TRAINING.dbo.Road_TEST' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="Road_TEST">
+    <Key>
+      <PropertyRef Name="CityID" />
+      <PropertyRef Name="RegionID" />
+      <PropertyRef Name="RoadID" />
+    </Key>
+    <Property Name="CityID" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="RegionID" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="RoadID" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Road_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Role_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Role_Desc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role_Status" Type="bit" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Roles_Menus">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MenuID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Type_Insert" Type="bit" />
+    <Property Name="Type_Update" Type="bit" />
+    <Property Name="Type_Delete" Type="bit" />
+    <Property Name="Type_Select" Type="bit" />
+    <Property Name="Type_Execue" Type="bit" />
+    <Property Name="Type_Report" Type="bit" />
+    <Property Name="Type_Spe1" Type="bit" Nullable="false" />
+    <Property Name="Type_Spe2" Type="bit" Nullable="false" />
+    <Property Name="Type_Spe3" Type="bit" Nullable="false" />
+    <Property Name="Type_Spe4" Type="bit" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="User_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AccountID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Salt" Type="varchar" MaxLength="10" />
+    <Property Name="EmpoID" Type="varchar" MaxLength="10" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users_Roles">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InputUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="InputDate" Type="datetime" />
+    <Property Name="ModifyUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="ModifyDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_dbo_Bank_Casetype_Relation_dbo_Bank_BankID">
+    <End Role="Bank" Type="Self.Bank" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bank_Casetype_Relation" Type="Self.Bank_Casetype_Relation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="BankID" />
+      </Principal>
+      <Dependent Role="Bank_Casetype_Relation">
+        <PropertyRef Name="BankID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Roles_Menus_dbo_Menus_MenuID">
+    <End Role="Menus" Type="Self.Menus" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Roles_Menus" Type="Self.Roles_Menus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menus">
+        <PropertyRef Name="MenuID" />
+      </Principal>
+      <Dependent Role="Roles_Menus">
+        <PropertyRef Name="MenuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Roles_Menus_dbo_Roles_RoleID">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Roles_Menus" Type="Self.Roles_Menus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Roles_Menus">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Users_Roles_dbo_Roles_RoleID">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users_Roles" Type="Self.Users_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Users_Roles">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Users_Roles_dbo_Users_UserID">
+    <End Role="Users" Type="Self.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Users_Roles" Type="Self.Users_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Users_Roles">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CRUD_TRAININGModelStoreContainer">
+    <EntitySet Name="Bank" EntityType="Self.Bank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bank_Casetype_Relation" EntityType="Self.Bank_Casetype_Relation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bank_Report_Relation" EntityType="Self.Bank_Report_Relation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Case_Basic" EntityType="Self.Case_Basic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Case_Basic_Builder_Cars" EntityType="Self.Case_Basic_Builder_Cars" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Case_Basic_Builder_Price" EntityType="Self.Case_Basic_Builder_Price" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Case_Basic_Builder_Price_Detail" EntityType="Self.Case_Basic_Builder_Price_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Case_Basic_Builder_Products" EntityType="Self.Case_Basic_Builder_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Case_Basic_Land_House" EntityType="Self.Case_Basic_Land_House" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Case_Basic_Land_Price" EntityType="Self.Case_Basic_Land_Price" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Case_Basic_Land_Price_Detail" EntityType="Self.Case_Basic_Land_Price_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Case_Basic_Land_Products" EntityType="Self.Case_Basic_Land_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Case_Process" EntityType="Self.Case_Process" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Code_Table" EntityType="Self.Code_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_Appraise_Price" EntityType="Self.Customer_Appraise_Price" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dept" EntityType="Self.Dept" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empo" EntityType="Self.Empo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Holidays" EntityType="Self.Holidays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Process_JumpReturn_History" EntityType="Self.Process_JumpReturn_History" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Road" EntityType="Self.Road" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Road_Sec" EntityType="Self.Road_Sec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Road_Sub_Sec" EntityType="Self.Road_Sub_Sec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles_Menus" EntityType="Self.Roles_Menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users_Roles" EntityType="Self.Users_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Road_TEST" EntityType="Self.Road_TEST" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Road_TEST].[CityID] AS [CityID], 
+    [Road_TEST].[RegionID] AS [RegionID], 
+    [Road_TEST].[RoadID] AS [RoadID], 
+    [Road_TEST].[Road_Name] AS [Road_Name], 
+    [Road_TEST].[Status] AS [Status], 
+    [Road_TEST].[InputUser] AS [InputUser], 
+    [Road_TEST].[InputDate] AS [InputDate], 
+    [Road_TEST].[ModifyUser] AS [ModifyUser], 
+    [Road_TEST].[ModifyDate] AS [ModifyDate]
+    FROM [dbo].[Road_TEST] AS [Road_TEST]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_dbo_Bank_Casetype_Relation_dbo_Bank_BankID" Association="Self.FK_dbo_Bank_Casetype_Relation_dbo_Bank_BankID">
+      <End Role="Bank" EntitySet="Bank" />
+      <End Role="Bank_Casetype_Relation" EntitySet="Bank_Casetype_Relation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Roles_Menus_dbo_Menus_MenuID" Association="Self.FK_dbo_Roles_Menus_dbo_Menus_MenuID">
+      <End Role="Menus" EntitySet="Menus" />
+      <End Role="Roles_Menus" EntitySet="Roles_Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Roles_Menus_dbo_Roles_RoleID" Association="Self.FK_dbo_Roles_Menus_dbo_Roles_RoleID">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Roles_Menus" EntitySet="Roles_Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Users_Roles_dbo_Roles_RoleID" Association="Self.FK_dbo_Users_Roles_dbo_Roles_RoleID">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users_Roles" EntitySet="Users_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Users_Roles_dbo_Users_UserID" Association="Self.FK_dbo_Users_Roles_dbo_Users_UserID">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Users_Roles" EntitySet="Users_Roles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

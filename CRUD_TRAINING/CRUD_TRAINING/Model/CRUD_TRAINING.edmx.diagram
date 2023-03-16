@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8a13f1f78ee456dbcc0ff866eea5f53" Name="Diagram1">
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Bank_Casetype_Relation" Width="1.5" PointX="8" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Bank_Report_Relation" Width="1.5" PointX="5.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Case_Basic" Width="1.5" PointX="2.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Case_Basic_Builder_Cars" Width="1.5" PointX="8.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Case_Basic_Builder_Price" Width="1.5" PointX="10.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Case_Basic_Builder_Price_Detail" Width="1.5" PointX="10.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Case_Basic_Builder_Products" Width="1.5" PointX="10.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Case_Basic_Land_House" Width="1.5" PointX="4.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Case_Basic_Land_Price" Width="1.5" PointX="6.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Case_Basic_Land_Price_Detail" Width="1.5" PointX="12.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Case_Basic_Land_Products" Width="1.5" PointX="12.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Case_Process" Width="1.5" PointX="12.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.City" Width="1.5" PointX="12.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Class" Width="1.5" PointX="14.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Code_Table" Width="1.5" PointX="14.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Customer_Appraise_Price" Width="1.5" PointX="14.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Dept" Width="1.5" PointX="14.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Empo" Width="1.5" PointX="6.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Holidays" Width="1.5" PointX="8.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Menus" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Process_JumpReturn_History" Width="1.5" PointX="10.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Region" Width="1.5" PointX="16.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Report" Width="1.5" PointX="16.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Road" Width="1.5" PointX="16.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Road_Sec" Width="1.5" PointX="16.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Road_Sub_Sec" Width="1.5" PointX="12.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Roles" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Roles_Menus" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.sysdiagrams" Width="1.5" PointX="14.75" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Users" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Users_Roles" Width="1.5" PointX="6" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Road_TEST" Width="1.5" PointX="16.75" PointY="18.875" IsExpanded="true" />
+        <AssociationConnector Association="CRUD_TRAININGModel.FK_dbo_Roles_Menus_dbo_Menus_MenuID" ManuallyRouted="false" />
+        <AssociationConnector Association="CRUD_TRAININGModel.FK_dbo_Roles_Menus_dbo_Roles_RoleID" ManuallyRouted="false" />
+        <AssociationConnector Association="CRUD_TRAININGModel.FK_dbo_Users_Roles_dbo_Roles_RoleID" ManuallyRouted="false" />
+        <AssociationConnector Association="CRUD_TRAININGModel.FK_dbo_Users_Roles_dbo_Users_UserID" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CRUD_TRAININGModel.Bank" Width="1.5" PointX="5.75" PointY="10.25" />
+        <AssociationConnector Association="CRUD_TRAININGModel.FK_dbo_Bank_Casetype_Relation_dbo_Bank_BankID" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
